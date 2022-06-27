@@ -62,3 +62,29 @@ class Game:
             print("Please pick one of the choices")
             print("")
             user_input = input("How many players would you like? 1, 2 or 3 for a surprise ")
+
+#Logic to determine winner and match count   
+ # check to see if it a tie, then check all of player one win conditions ELSE player 2 wins
+    def game_mode(self):
+        while self.player_one.wins < 2 and self.player_two.wins < 2:
+            self.player_one.choose_gesture()
+            self.player_two.choose_gesture()
+            if self.player_one.chosen_gesture == self.player_two.chosen_gesture:
+                print("its a tie, play another round")
+            elif self.player_one.chosen_gesture == "Rock" and (self.player_two.chosen_gesture == "Scissors" or self.player_two.chosen_gesture == "Lizard"):
+                print(f"Player One wins this round with {self.player_one.chosen_gesture} vs Player Two's {self.player_two.chosen_gesture} ")
+                self.player_one.wins += 1
+            elif self.player_one.chosen_gesture == "Paper" and (self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Spock"):
+                print(f"Player One wins this round with {self.player_one.chosen_gesture} vs Player Two's {self.player_two.chosen_gesture} ")
+                self.player_one.wins += 1
+            elif self.player_one.chosen_gesture == "Scissors" and (self.player_two.chosen_gesture == "Paper" or self.player_two.chosen_gesture == "Lizard"):
+                print(f"Player One wins this round with {self.player_one.chosen_gesture} vs Player Two's {self.player_two.chosen_gesture} ")
+                self.player_one.wins += 1
+            elif self.player_one.chosen_gesture == "Lizard" and (self.player_two.chosen_gesture == "Paper" or self.player_two.chosen_gesture == "Spock"):
+                print(f"Player One wins this round with {self.player_one.chosen_gesture} vs Player Two's {self.player_two.chosen_gesture} ")
+                self.player_one.wins += 1
+            elif self.player_one.chosen_gesture == "Spock" and (self.player_two.chosen_gesture == "Scissors" or self.player_two.chosen_gesture == "Rock"):
+                print(f"Player One wins this round with {self.player_one.chosen_gesture} vs Player Two's {self.player_two.chosen_gesture} ")
+                self.player_one.wins += 1
+            else:
+                print(f"Player Two wins this hand with {self.player_two.chosen_gesture} vs players One's {self.player_one.chosen_gesture} " )
