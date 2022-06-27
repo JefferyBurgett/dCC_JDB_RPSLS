@@ -33,3 +33,12 @@ class Game:
         print("")
         print("Use the number keys to enter your selection.")
         print("")
+
+#Display Game Rules - Add sleep to slow text scroll
+    def display_rules(self):      
+        time.sleep(.5)
+        print("Here are the Rules of the Game!")
+        print("")
+        time.sleep(.5)
+        rules = [(time.sleep(.3), print(rule)) for rule in self.rules_list]
+        print("")
