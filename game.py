@@ -88,3 +88,10 @@ class Game:
                 self.player_one.wins += 1
             else:
                 print(f"Player Two wins this hand with {self.player_two.chosen_gesture} vs players One's {self.player_one.chosen_gesture} " )
+
+                #check for 2 wins, display which player won            
+    def display_winner(self):
+            if self.player_one.wins == 2:
+                print("Player One Has Won The Match!!! ")
+            else:
+                print("Player Two Has Won The Match!! ")
