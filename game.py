@@ -42,3 +42,23 @@ class Game:
         time.sleep(.5)
         rules = [(time.sleep(.3), print(rule)) for rule in self.rules_list]
         print("")
+
+#Player selection with logic to determine game type    
+    def player_selection(self):
+        user_input = input("How many players would you like? 1, 2 or 3 for a surprise ")
+        self.user_input = user_input
+        # self.human.type = human
+        # self.ai.type = ai
+        if user_input == "1":
+            self.player_one = Human()
+            self.player_two = AI()    
+        elif user_input == "2":
+            self.player_one = Human()
+            self.player_two = Human()
+        elif user_input == "3":
+            self.player_one = AI() 
+            self.player_two = AI()
+        else:
+            print("Please pick one of the choices")
+            print("")
+            user_input = input("How many players would you like? 1, 2 or 3 for a surprise ")
