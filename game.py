@@ -23,3 +23,13 @@ class Game:
         self.player_selection()
         self.game_mode()
         self.display_winner()
+
+#Print Initial Welcome to Game
+    def display_welcome(self):
+        
+        print("Welcome to Rock, Paper, Scissors, Lizard and Spock!")
+        print("")
+        print("Each match will be the best of three games.")
+        print("")
+        print("Use the number keys to enter your selection.")
+        print("")
